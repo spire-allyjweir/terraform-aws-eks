@@ -97,4 +97,7 @@ data "http" "wait_for_cluster" {
     aws_security_group_rule.cluster_private_access_sg_source,
     aws_security_group_rule.cluster_private_access_cidrs_source,
   ]
+  lifecycle {
+    ignore_changes = ["response_headers"]
+  }
 }
